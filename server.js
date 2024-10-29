@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth");
-const taskRoutes = require("./routes/taskRoutes");
+
 require("dotenv").config(); // Load environment variables
 
 // Import the MongoDB connection logic
@@ -20,7 +20,7 @@ connectToMongoDB(); // Call the MongoDB connection function from config/db.js
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use('/api/tasks', taskRoutes);
+
 
 // Start the server
 const PORT = process.env.PORT || 5001;
